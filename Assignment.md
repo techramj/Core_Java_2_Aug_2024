@@ -160,3 +160,84 @@ int[] arr = {10,5,6,23,2,56};
 3. find the 2nd highest number 
 4. find the 3rd highest number
 5. avg of an array
+
+## solution
+	
+	public class ArrayUtil {
+		
+	   public static int getHighestNumber(int[] arr) { //10,20,3,4,22,34,1
+		   int max = arr[0];
+		   for(int i=1;i<arr.length;i++) {
+			   if(arr[i]> max) {
+				   max = arr[i];
+			   }
+		   }
+		
+			return max;
+		}
+		
+		public static int getLowesttNumber(int[] arr) {
+			
+			int min = arr[0];
+			   for(int i=1;i<arr.length;i++) {
+				   if(arr[i] < min) {
+					   min = arr[i];
+				   }
+			   }
+			
+				return min;
+		}
+		
+	    public static int getSecondHighestNumber(int[] arr) {  //10,20,x,4,22,34,1
+	    	
+	    	int num1;
+	    	int num2;
+	    	
+	    	//assume num1 is 1st and num2 is the 2nd highest
+	    	
+	    	if(arr[0]> arr[1]) {
+	    		num1 = arr[0];
+	    		num2 = arr[1];
+	    	}else {
+	    		num2 = arr[0];
+	    		num1 = arr[1];
+	    	}
+	    	
+	    	for(int i=2;i<arr.length;i++) {
+	    		if(arr[i]> num1 && arr[i]> num2) {
+	    			num2 = num1;
+	    			num1 = arr[i];
+	    		}else if(arr[i]> num2 && arr[i]<num1) {
+	    			num2 = arr[i];
+	    		}
+	    	}
+			
+			return num2;
+		}
+	    
+	    public static int getThirdHighestNumber(int[] arr) {
+			
+			return 0;
+		}
+	    
+	    public static double avg(int[] arr) {
+			
+			return 0;
+		}
+	    
+	    public static void printNumberRepeatedInAnArray(int[] arr) {//2,3,2,3,4,4,5,5,6,1,2,1,0,0,1
+	    	
+	    	int[] barr = new int[10];
+	    	
+	    	for(int i=0;i<arr.length;i++) {
+	    		barr[arr[i]]++;  //barr[2]++
+	    	}
+	    	
+	    	for(int i=0;i<barr.length;i++) {
+	    		System.out.println(i+"="+barr[i]);
+	    	}
+	    		
+	    }
+	
+	}
+	
