@@ -141,3 +141,22 @@
 	
 
 }
+
+
+
+
+
+
+
+
+
+# Assignment -02
+# Assignment -03
+create an array of any size and assing some random number
+int[] arr = {10,5,6,23,2,56};
+
+1. find the  highest number
+2. find the lowest number
+3. find the 2nd highest number 
+4. find the 3rd highest number
+5. avg of an array
