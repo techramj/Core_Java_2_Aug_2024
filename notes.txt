@@ -1,0 +1,141 @@
+public class Date {
+	
+	int dd;  //data member /Object member /Instance member /propery
+	int mm;
+	int yy;
+}
+
+All object allocate memory in a heap.
+
+syntax of method:
+-----------------
+returntype name_of_method(...paramters);
+eg: 
+void display(){
+
+}
+
+int add(int a, int b){
+  
+  return 0;
+}
+
+
+can we write function or method with out returntype? no 
+
+
+
+Constructor:
+------------
+It is a special having same name that of class with no return type.
+it is called implicitly when object is created.
+it cannot called explicitly.
+it is used to initalize the data member.
+Constructor can be overloaded.(more than one method with same name different signature)
+
+
+
+Encapsulation:
+---------------
+ hiding the data and proivde the interface to access it.
+
+ access specifier:
+ ----------------
+ public
+ protected
+ default
+ private
+
+
+ public/private
+
+
+ this
+ ----
+ this is keyword in java which refer to current object. It is available is all the instance method.
+
+
+ Date d1 = new Date(1,1,2001);
+ Date d2 = new Date(2,2,2002);
+
+
+ d1.display();
+
+ display(){
+    //this
+  sysout("dd="+this.dd);
+
+ }
+
+
+accessor => getter
+mutator  => setter
+facilator => eg display()
+helper method => private method
+ 
+
+ # finalize method 
+
+ # static 
+   single copy per class.
+   static is the member of class.
+   non-static/instance member is a memebr of object
+   how to call static member:
+       ClassName.staticMember
+
+
+# static block 
+   It is called only one time when class is loaded.
+
+TRY OUT: If more than one static block then which static block will be call first
+
+# toString() to display object in the form of String.
+
+
+
+
+
+# Array
+1. Array is an object 
+2. Array is a first class object.(Object created without new keyword)
+3. It is a collection of similar datatype.
+
+#  pass by value
+    explained 
+
+# overloading
+    same name and different signature
+    1. no of parameter
+    2. type of parameter
+    3. sequence in which parameter passed
+
+    NOTE: signature is not depend upon return type
+    public void add(){}
+    private int add(){}
+    signature are same;
+
+# varargs (variable arguments)
+   foo(int ... args)
+   from 0 to n number of arguments can be passed.
+
+   Rule:
+   1. method contain only one varargs 
+      add(int..args)  => valid
+      add(int...args, string...args) => not valid
+
+   2. varargs must be the last parameter 
+      add(int..args, int); => not valid
+      add(int, String...args, double); =>  not valid
+      add(int, double, String...args); => valid
+
+      add(int, int, int...args)
+
+# foreach( enhanced for loop)
+     for( datatype variableName : collection ){
+
+     }
+
+    
+
+
+   
