@@ -242,27 +242,27 @@ int[] arr = {10,5,6,23,2,56};
 	}
 
 # Assignment 04
-1.  create array of size 2 and write a method to swap the value .
-   	arr[0] = 10
-        arr[1] = 20;
-    then when you call swap method, in main method the value of arr[0] and arr[1] should be swapped.
-
-2. overload method add. Create class Math
-   add(int, int)
-   add(float, float)
-   add(double, double)
-   add(long, long)
-   add(short, short)
-   add(byte,byte)
-   and check
-   add(1,2) call which method. if that method is commented then which will be the next method.
-   repeat the step and find the order in which method will be called.
-
-3. create class Algebra and implement below method
-   long add(int, int, int...args)
-   long multiply(int,int, int ... args)
-
-Note whenever you will iterate the array, use enhanced for loop.
+	1.  create array of size 2 and write a method to swap the value .
+	   	arr[0] = 10
+	        arr[1] = 20;
+	    then when you call swap method, in main method the value of arr[0] and arr[1] should be swapped.
+	
+	2. overload method add. Create class Math
+	   add(int, int)
+	   add(float, float)
+	   add(double, double)
+	   add(long, long)
+	   add(short, short)
+	   add(byte,byte)
+	   and check
+	   add(1,2) call which method. if that method is commented then which will be the next method.
+	   repeat the step and find the order in which method will be called.
+	
+	3. create class Algebra and implement below method
+	   long add(int, int, int...args)
+	   long multiply(int,int, int ... args)
+	
+	Note whenever you will iterate the array, use enhanced for loop.
 
    
    
