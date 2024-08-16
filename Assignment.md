@@ -151,6 +151,23 @@
 
 
 # Assignment -02
+   1. reverse the number. 123 => 321.
+   2. check whether the string is palindrome
+   3. print first n fibbonaci terms
+   4. fibbonaci using recursion
+   5. highest prime number nearest to the given number
+        eg:  8  => 7
+             5 => 3, 7 print the min number ans => 3
+             25 => 23
+
+         three method:
+           nearestPrimeNumber(int num)
+           nextPrmeNumber(int num)
+           prviousPrimeNumber(int num)
+
+         in a single method: nearestPrimeNumber(int num)
+   
+   
 # Assignment -03
 create an array of any size and assing some random number
 int[] arr = {10,5,6,23,2,56};
