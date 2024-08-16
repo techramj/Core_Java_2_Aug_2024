@@ -261,8 +261,20 @@ int[] arr = {10,5,6,23,2,56};
 	3. create class Algebra and implement below method
 	   long add(int, int, int...args)
 	   long multiply(int,int, int ... args)
+
+        4. Write the program to print the number and their count.
+		long num = 123453300423l;
+		    0=2
+		    1=1
+		    2=2
+		    3=4
+		    4=2
+		    5=1
+	   
 	
 	Note whenever you will iterate the array, use enhanced for loop.
+
+     
 
    
    
