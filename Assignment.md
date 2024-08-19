@@ -294,22 +294,24 @@ int[] arr = {10,5,6,23,2,56};
  # Assignment 06
  	create three package pkg1 , pkg2, pkg3.
   	pkg1
-   	  Date
-            int dd;
-	    int mm;
-	    int yy;
+   	  	Date
+	            int dd;
+		    int mm;
+		    int yy;
         pkg2
-	  Employee
-             int id;
-	     String name;
-             double salary;
-	     Date date;  //containment
+	  	Employee
+	             int id;
+		     String name;
+	             double salary;
+		     Date doj;  //containment
              
             id should be auto generated
 	    write the method which will return total number of employees.
 
         pkg3
           Main
+	   create two object of Employee.
+           Test the four access specifier
 
      
 
