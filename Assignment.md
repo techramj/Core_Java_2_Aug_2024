@@ -313,6 +313,69 @@ int[] arr = {10,5,6,23,2,56};
 	   create two object of Employee.
            Test the four access specifier
 
+# Assignment 07
+	Employee
+ 		id
+   		name
+     		salary
+		netSalary()
+  		display(): print the details of employee
+
+
+ 	SalesPerson extends Employee
+  		salesMade
+    		commission
+      		netSalary() : override
+	        display(): override
+	 	calculatCommission(): special method
+
+        SalesManager extends SalesPerson
+		noOfSubordinate
+  		bonus
+    		netSalary(): override
+		display(): override
+  		calcualteBonus() : special method
+
+
+   ## In the main method
+   	1. create the object of Employee, SalesPerson, SalesManager
+    	2. mention which constructor will be called first, argange in the order
+     	3. use the super construcotr
+      	4. user the super keyword to use the sane behaviour of super class
+        5. what we need to do, to avoid overriding of display method of Employee
+	6. whant change you will do so that no one can extends SalesManager ?
+
+ # Assignment 8
+ 	1. create class Date
+  	2. override object method
+   		a. toString
+     		b. hashCode  // same object should always have same hashCode
+       		c. finalize
+	 	d. can we override getClass() method ?
+  	
+	
+  		
+
+     
+ 	   
+     		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      
 
    
