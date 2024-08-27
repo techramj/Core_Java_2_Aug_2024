@@ -352,7 +352,29 @@ int[] arr = {10,5,6,23,2,56};
      		b. hashCode  // same object should always have same hashCode
        		c. finalize
 	 	d. can we override getClass() method ?
-  	
+
+
+# Assignment 9
+  1. Create Employee , WageEmployee, SalesPerson, SalesManager class as discussed in previous session.
+  2. Array of an Employee (let the size of array = 5)
+  3. populate the array  with Employee , SM, SP, WE object
+  4. method to display details of employees in an array
+  5. details
+     	 display the value of properties
+         netSalary
+         variable(in case of WE)
+         bonus(SM)
+         commission (SP)
+
+  6. create one interface Printable and implement Printable to Employee class
+
+# Assignment 10
+1. create abstract class Shape
+2. create sub class Rectangle, Circle, Triangle, Square
+3. write one method to display the details of Shape
+
+   
+  
 	
   		
 
