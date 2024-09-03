@@ -1,0 +1,151 @@
+		Throwable
+Error			   Exception
+             Unchecked        checked
+             RuntimeException
+             
+             
+ try
+ catch
+ finally
+ throw
+ throws
+ 
+ 
+ Read the file
+ 	open the file
+ 	read operation
+ 	close operation
+ 	
+ 	
+ 	
+try{
+ //open the file
+ //read the file
+ //close the file
+}catch(){
+  //close the file
+}
+ 	
+ 	
+try{
+ //open the file
+ //read the file
+ 
+}catch(){
+  
+}finally{
+	//close the file
+}
+
+--till java 6
+
+In java 7, two features  are added
+try with resources
+try(open the resource){
+}catch(Exception e){
+}
+
+what type of resource
+the class which implements autoclosable interface
+
+
+
+
+multicatch
+
+
+try{
+}catch(Exception1 e){
+  //handling
+}
+catch(Exception2 e){
+ //handling
+}
+catch(Exception3 e){
+ //handling
+}
+
+
+try{
+
+}catch(Exception1 | Exception2 | Exception3 e){
+  //handling
+}
+
+rule: there should not parent child relation
+
+
+           Exp1
+      
+   Exp2     		Exp3
+   
+  Exp4 Exp5   	  Exp6    Exp7
+  
+  
+  catch(Exp4 | Exp5 | Exp3 e)
+  
+  catch(Exp4 | Exp2 e)  //not allowed
+  catch(Exp4 | Exp1 e)  //not allowed
+  
+  
+  
+  
+User define exception
+----------------------
+
+int age = 150;
+int a =10;
+int b = 20;
+
+int c = a-b;
+
+
+
+//exception flow /exception unwinding
+
+foo1      foo2()			foo3()
+A			X				p
+B			Y				Q
+C			foo1()		    foo2()		
+D			Z				R
+
+main()
+{
+	foo3();  //P Q X Y A B C D Z R
+}
+
+
+foo1      foo2()			foo3()
+A			X				p
+B			Y				Q
+C=>exp		foo1()    foo2()		
+D			Z				R
+
+main()
+{
+	foo3();  //P Q X Y A B Z R
+}
+
+
+
+
+
+Overriding
+
+same name same signature and same return type , 
+access specifier should be same or greater
+
+covariant return type
+-----------------
+same name same signature and return type can be same or their subclass, 
+access specifier should be same or greater
+
+
+A
+public Emp foo(){}
+
+B extends A{
+ public WageEmp foo(){
+ }
+}
+
