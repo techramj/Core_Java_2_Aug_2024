@@ -1,0 +1,73 @@
+Genric
+
+General
+
+TypeSafety
+
+int a ;  
+
+one datatype which can store any data.
+
+Object
+
+
+store 10 name
+String[] arr = new String[10]; //fixed
+
+//11th element
+String[] barr = new String[20];
+//copy the element of arr to barr;
+//then add the 11th element
+
+
+store 10 numbers
+Integer[] arr = new Integer[10]; //fixed
+
+//11th element
+Integer[] barr = new Integer[20];
+//copy the element of arr to barr;
+//then add the 11th element
+
+Collection -> store the data and the size will grow dynamically
+
+				
+				    		Collection<T>
+				
+	List						Queue				Set
+	
+ArrayList Vector LinkedList    PriorityQueue    HashSet   SortedSet?<Interface>
+
+                  											NavigableSet<Interface>
+                  											
+                  											TreeSet
+
+
+
+
+
+
+
+      Map<K,V>
+      
+ HashMap     SortedMap
+ 			
+ 			NavigableMap
+ 			
+ 			TreeMap
+
+
+
+
+Collections
+1. how to add the data
+2. iterate the data
+3. search the data
+4. delete the data
+5. how we will get sorted data
+6. when to use which collection
+
+
+
+
+
+
