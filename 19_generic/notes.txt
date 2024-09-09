@@ -31,9 +31,9 @@ Integer[] barr = new Integer[20];
 Collection -> store the data and the size will grow dynamically
 
 				
-				    		Collection<T>
+				    		Collection<T> 
 				
-	List						Queue				Set
+	  List						Queue				Set
 	
 ArrayList Vector LinkedList    PriorityQueue    HashSet   SortedSet?<Interface>
 
@@ -43,7 +43,7 @@ ArrayList Vector LinkedList    PriorityQueue    HashSet   SortedSet?<Interface>
 
 
 
-
+Loose coupling vs tight coupling
 
 
 
@@ -68,6 +68,64 @@ Collections
 
 
 
+Array => size is fixed
+int[] arr = new int[10]
+
+ArrayList list = new ArrayList();
+list.add(1);
 
 
 
+
+void add(int, int)
+
+void add(Integer, Integer)
+
+add(Integer.valueoOf(1),Integer.valueOf(2))
+
+
+
+
+
+
+   public static void display(List<Integer> list) {
+ 		for(Integer i:list) {
+			System.out.print(i+"  ");
+		}
+		System.out.println("\n");
+	}
+	
+	public static void display(List<Double> list) {
+		for(Double i:list) {
+			System.out.print(i+"  ");
+		}
+		System.out.println("\n");
+	}
+	
+	both have same name and same signature
+
+
+
+
+
+-------------------------
+               Set
+               
+             
+       HashSet         TreeSet   LinkedHashSet
+       
+       
+ Set contain unique value.
+ duplicate are  not allowed
+ 
+ 
+HashSet:
+    unordered, unsorted
+
+
+TreeSet:
+    sortedData
+    
+    
+LinkedHashSet
+    ordered data

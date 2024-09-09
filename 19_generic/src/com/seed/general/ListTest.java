@@ -126,15 +126,36 @@ public class ListTest {
 	public static void main(String[] args) {
 		//example1();
 		
-		List<Integer> ilist = new ArrayList<Integer>();
-		ilist.add(10); 
-		ilist.add(20);
+		//ArrayList<Integer> ilist = new ArrayList<Integer>(); //Tight coupling
+		List<Integer> ilist = new LinkedList<Integer>() ; //loose coupling
+		
+		//adding the data
+		ilist.add(1); 
+		ilist.add(2);
 		ilist.add(3);
 		ilist.add(7);
 		ilist.add(22);
 		ilist.add(2);
 		
+		//iterate list
 		displayList1(ilist);
+		
+		
+		//fetch the data for eg: fetch 3rd element
+		int thridElement = ilist.get(2);
+		
+		//delete the element
+		System.out.println(ilist);
+		
+		System.out.println("removing 22 from the list");
+		ilist.remove(Integer.valueOf(22));  //remove element by object
+		System.out.println(ilist);
+		
+		
+		System.out.println("removing index 2");
+		ilist.remove(2); //remove element by index
+		System.out.println(ilist);
+		
 		
 		//deleteEvenNumber(ilist);
 		doubleOddNumber(ilist);
