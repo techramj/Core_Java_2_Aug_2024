@@ -1,0 +1,19 @@
+RTTI => Runtime type identification (instanceOf)
+
+Reflection =>Runtime type information
+
+class Emp{
+	
+}
+
+
+to display document info
+project => generate javadocs => generate the docs
+
+
+Annotation
+@Documented
+@Override
+@Target
+@Retention
+@Supresswarning
