@@ -1,0 +1,26 @@
+flow of byte = stream
+
+based on flow => stream is of two type (InputStream & OutputStream)
+
+
+whenever you want to read => InputStream
+whenever you want to write in a file => OutputStream
+
+
+        Read a file
+        
+            InputStream
+              FileInputStream
+              DataInputStream
+              
+ 
+ 
+ file operation
+  open the file
+  read/write 
+  close the file
+            
+            
+ Flow of char 
+ Reader
+ Writer
