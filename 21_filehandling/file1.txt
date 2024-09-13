@@ -1,2 +1,14 @@
-flow of byte is called steam
-flow of character is called reader or writer
+id first_name address salary
+
+emp
+ 1, Abhay kumar Choudhary flat no 2, xyz building 411041 50000
+ 
+ List<Employees> list = new AL<>();
+ 
+ 
+ Serialization
+ object will convert into byte stream => file
+ 
+ 
+ 
+ De serialization
