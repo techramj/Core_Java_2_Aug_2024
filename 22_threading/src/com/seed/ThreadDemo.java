@@ -78,8 +78,47 @@ public class ThreadDemo {
 		t2.start();
 	}
 	
+	
+	private static void pause(int timeInMs) {
+		try {
+			Thread.sleep(timeInMs);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static void dameonThreadExample() {
+		Thread t1 = new Thread() {
+			@Override
+			public void run() {
+				for(int i=0;i<10;i++) {
+					System.out.println(Thread.currentThread().getName()+" - "+i);
+					pause(1000);
+					
+				}
+			}
+		};
+		Thread t2 = new Thread() {
+			@Override
+			public void run() {
+				for(int i=0;i<10;i++) {
+					System.out.println(Thread.currentThread().getName()+" - "+i);
+					pause(200);
+				}
+			}
+		};
+		t1.setName("one");
+		t2.setName("two");
+		
+		t1.setDaemon(true);
+		
+		t1.start();
+		t2.start();
+	}
+	
 	public static void main(String[] args) {
-		example5();
+		dameonThreadExample();
 	}
 
 }

@@ -3,3 +3,18 @@ multi tasking
 multi threading
 
 
+Lifecycle
+
+
+new => Thead t1 = new MyThread();
+
+Runnable  t1.start()
+											Blocking/Suspended   time completed/notify/I/o
+   
+Running  Thead.sleep/ wait/ I/O
+
+
+Terminated
+
+
+
