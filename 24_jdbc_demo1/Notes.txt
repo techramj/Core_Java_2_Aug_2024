@@ -1,0 +1,23 @@
+How to get the connection Object
+ step 1: load the driver
+   download the jar: https://www.oracle.com/in/database/technologies/appdev/jdbc-downloads.html
+   put the jar file in lib folder and add the jar in build path using add jar
+   or
+   direct add the jar in build path using add external jar
+   
+   DriverName:
+   -----------
+   Oracle: oracle.jdbc.driver.OracleDriver
+   Mysql: com.mysql.cj.jdbc.Driver
+   
+   
+   URL:
+   -----
+   Oracle:  "jdbc:oracle:thin:@localhost:1521:XE"
+   mySQL:    "jdbc:mysql://localhost:3306/hr";
+   
+   
+   C:  insert
+   R : read
+   U : update
+   D:  delete
