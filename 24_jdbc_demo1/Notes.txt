@@ -21,3 +21,35 @@ How to get the connection Object
    R : read
    U : update
    D:  delete
+   
+   
+   1. add
+   2. update
+   3. delete
+   4. view
+   
+   
+   
+   Difference b/w Statement and PreparedStatement
+   
+  sql1 =  update emp set salary = 1000 where id = 1
+  sql2 = update emp set salary = 5000 where id = 2
+   
+   Statement st = con.createStatement();
+   st.executeUpdate(sql1);  //compile
+   st.executeUpdate(sql2);  //compile
+  ------------------------------------------ 
+   sql1 =  update emp set salary = ? where id = ?
+   PreparedStatement ps = con.prepareStatement(sql)	
+   
+   ps.setDouble(1,1000);
+   ps.setInteger(2,1)
+   ps.executeUpdate();
+   
+   
+   ps.setDouble(1,5000);
+   ps.setInteger(2,2);
+   ps.executeUpdate();
+   
+   
+   
