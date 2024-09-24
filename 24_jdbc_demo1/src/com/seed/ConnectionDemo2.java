@@ -21,11 +21,24 @@ public class ConnectionDemo2 {
 		EmployeeDao empDao = new EmployeeDaoImpl();
 		//empDao.addEmployee(new Employee(10,"Jack",9999));
 		
-		displayDbInfo();
-		displayTableDetails("students");
+		//displayDbInfo();
+		//displayTableDetails("students");
+		//List<Employee> empList = getEmployeesList(10000);
+		//empDao.addEmployees(empList);
+		//empDao.addEmployeesUsingBatch(empList);
+		
+		empDao.transferAmount(7,10, 1000);
 		
 	}
 	
+	
+	public static List<Employee> getEmployeesList(int count) {
+		List<Employee> list = new ArrayList<Employee>();
+		for(int i=1;i<=count;i++) {
+			list.add(new Employee(i,"name-"+i, 5000));
+		}
+		return list;
+	}
 	
 	public static void displayDbInfo() {
 		try {
@@ -40,7 +53,6 @@ public class ConnectionDemo2 {
 		}
 		
 	}
-	
 	
 	//information of the table
 	public static void displayTableDetails(String tableName) {
@@ -60,5 +72,10 @@ public class ConnectionDemo2 {
 		}
 		
 	}
+	
+
+	
+	
+	
 
 }

@@ -53,3 +53,55 @@ How to get the connection Object
    
    
    
+   Batch update:
+   ----------------
+
+10000 rows added
+time taken: 2939 ms
+   
+   
+   
+   
+   
+ transaction
+ ------------
+   it is logical set of dml operation, followed by commit/rollback
+   Transaction should follow acid rule.
+   
+   Atomicity: 
+   Consistency
+   Isolation
+   Durability
+   
+   
+   
+   
+   ResultSet -> scrollable and updateable
+   -----------------------------------------
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   

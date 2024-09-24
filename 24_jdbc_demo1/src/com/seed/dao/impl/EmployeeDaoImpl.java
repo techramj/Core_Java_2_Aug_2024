@@ -1,6 +1,7 @@
 package com.seed.dao.impl;
 
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -104,6 +105,92 @@ public class EmployeeDaoImpl implements EmployeeDao{
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	@Override
+	public void addEmployees(List<Employee> employees) {
+		long l1 = System.currentTimeMillis();
+		try(PreparedStatement ps = ConnectionUtil.getConnection().prepareStatement(ADD_EMP)){
+			for(Employee e: employees) {
+				ps.setInt(1, e.getId());
+				ps.setString(2, e.getName());
+				ps.setDouble(3, e.getSalary());
+				ps.executeUpdate();
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(employees.size()+" rows added");
+		long l2 = System.currentTimeMillis();
+		long time = l2-l1;
+		System.out.println("time taken: "+time+" ms");
+		
+	}
+
+	@Override
+	public void addEmployeesUsingBatch(List<Employee> employees) {
+		long l1 = System.currentTimeMillis();
+		int exCount = 0;
+		try(PreparedStatement ps = ConnectionUtil.getConnection().prepareStatement(ADD_EMP)){
+			int count = 0;
+			for(Employee e: employees) {
+				ps.setInt(1, e.getId());
+				ps.setString(2, e.getName());
+				ps.setDouble(3, e.getSalary());
+				ps.addBatch();
+				count++;
+				if(count == 100) {
+					ps.executeBatch();
+					count = 0;
+					exCount++;
+				}
+			}
+			if(count!=0) {
+				ps.executeBatch();
+				exCount++;
+			}
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(employees.size()+" rows added"+" and not of batch executed: "+exCount);
+		long l2 = System.currentTimeMillis();
+		long time = l2-l1;
+		System.out.println("time taken: "+time+" ms");
+		
+		
+	}
+	
+	public void transferAmount(int fromId, int toId, double amount) {
+		String sql = "update emp set salary = salary + ? where id = ?";
+		Connection con = ConnectionUtil.getConnection();
+		try(PreparedStatement ps = con.prepareStatement(sql)){
+			con.setAutoCommit(false);
+			//deduct the amount from fromID
+			ps.setDouble(1, -amount);
+			ps.setInt(2, fromId);;
+			ps.executeUpdate();
+			
+			if(false) {
+				throw new IllegalArgumentException("Connection lost");
+			}
+			//add the amount to toID
+			ps.setDouble(1, amount);
+			ps.setInt(2, toId);;
+			ps.executeUpdate();
+			
+			con.commit();
+			
+			System.out.println(amount+" transfer successfully from "+fromId+" to "+toId);
+		}catch(Exception e) {
+			//System.out.println("error: "+e.getMessage());
+			System.out.println("not able to transfer amount due to "+e.getMessage());
+			try {
+				con.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
 	}
 
 }

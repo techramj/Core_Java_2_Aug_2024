@@ -24,5 +24,12 @@ public interface EmployeeDao {
     Employee findById(int id);
 	
 	public List<Employee> findByName(String name);
+	
+	public void addEmployees(List<Employee> employees);
+	
+	public void addEmployeesUsingBatch(List<Employee> employees);
+	
+	public void transferAmount(int fromId, int toId, double amount);
+	
 
 }
