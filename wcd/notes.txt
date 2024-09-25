@@ -1,0 +1,80 @@
+request  ------------> 
+         <-----------
+
+
+code
+1xx
+  informational
+
+2xx (successful)
+    200 OK
+    201 created
+    204 no content
+
+3xx  redirect
+  
+
+4xx  client side error
+     401  bad request
+     403  forbidden
+     404  not found
+
+
+5xx server side error
+    500
+-----------------------------------------
+HTTP method
+1. get => default
+2. post
+
+3. put
+4. post
+5. delete
+
+
+Request:
+  header
+  body
+
+response:
+  header
+  body
+
+
+
+Use case:
+  dynamic page
+
+
+Servelet => serve the request
+
+            Servlet<interface>
+
+
+
+          abstract class HTTPServelet    XYZ
+
+
+
+             MyServlet   ->  a.do
+
+
+step 1:
+   create Servlet
+
+step 2: 
+    map the request with the servlet
+    mapping can be done in 2 way.
+    1. using web.xml
+    2. using annotation
+
+
+
+
+difference b/w get vs post
+
+get method:
+http://localhost:9091/25_WCD1/login?username=Amol&password=abcd
+
+
+post method:
