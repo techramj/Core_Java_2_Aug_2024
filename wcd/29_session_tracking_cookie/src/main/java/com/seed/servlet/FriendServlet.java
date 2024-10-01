@@ -8,6 +8,7 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,14 +32,18 @@ public class FriendServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		Cookie[] cookies =request.getCookies();
 
-		ServletContext context = getServletContext();
-
-		String username = request.getParameter("username");
-		// String username = (String) context.getAttribute("username");
+		String username = null;
+		for(Cookie c: cookies) {
+			System.out.println(c.getName()+"  =  "+c.getValue());
+			if(c.getName().equals("username")) {
+				username = c.getValue();
+			}
+		}
 		String friend = request.getParameter("friend");
-		String email = request.getParameter("email");
-		String firstName = request.getParameter("firstName");
+		
 
 		PrintWriter out = response.getWriter();
 		out.println("<p>friend of "+username+" is "+ friend+"</p>");

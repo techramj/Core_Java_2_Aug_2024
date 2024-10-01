@@ -8,10 +8,13 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import com.seed.entity.User;
 import com.seed.service.LoginService;
 
 /**
@@ -31,20 +34,18 @@ public class FriendServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		ServletContext context = getServletContext();
-
-		String username = request.getParameter("username");
-		// String username = (String) context.getAttribute("username");
+		
+		HttpSession session = request.getSession(true);
+		System.out.println(this.getClass().getSimpleName()+"   "+session.getId());
+		User user = (User) session.getAttribute("user");
 		String friend = request.getParameter("friend");
-		String email = request.getParameter("email");
-		String firstName = request.getParameter("firstName");
+		
 
 		PrintWriter out = response.getWriter();
-		out.println("<p>friend of "+username+" is "+ friend+"</p>");
+		out.println("<p>friend of "+user.getFirstName()+" is "+ friend+"</p>");
 
 		// logic to save the friend in db.
-		loginService.addFriend(username, friend);
+		loginService.addFriend(user.getUsername(), friend);
 		
 		RequestDispatcher rd = request.getRequestDispatcher("login");
 		rd.include(request, response);

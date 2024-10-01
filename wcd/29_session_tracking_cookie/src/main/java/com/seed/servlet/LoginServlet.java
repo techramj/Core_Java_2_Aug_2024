@@ -12,6 +12,7 @@ import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -56,9 +57,12 @@ public class LoginServlet extends HttpServlet {
 		User user = loginService.getUser(username, password);
 		
 		PrintWriter out = response.getWriter();
-		out.println("<html>");
-		out.println("<body>");
+
 		if( user != null) {
+			//add cookie
+			Cookie cookie =  new Cookie("username", username);
+			response.addCookie(cookie);
+			cookie.setMaxAge(60);
 			out.println("<p>Welcome "+user.getFirstName()+" "+user.getLastName()+"</p>");
 			
 			//list of friends
@@ -68,8 +72,6 @@ public class LoginServlet extends HttpServlet {
 			out.println("<p>Invalid username and password!</p>");
 			out.println("<a href='login.html'>Click Here</a> for Login Page");
 		}
-		out.println("</body>");
-		out.println("</html>");
 	}
 	
 	@Override
