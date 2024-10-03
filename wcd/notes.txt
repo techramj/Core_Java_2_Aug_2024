@@ -53,6 +53,13 @@ Servelet => serve the request
 
 
           abstract class HTTPServelet    XYZ
+          service(...){
+            if(request is get){
+                doGet()
+            }else{
+                doPOst()
+            }
+          }
 
 
 
@@ -76,5 +83,305 @@ difference b/w get vs post
 get method:
 http://localhost:9091/25_WCD1/login?username=Amol&password=abcd
 
+get can be bookmark
+
+data is sent in URL
+
 
 post method:
+http://localhost:9091/25_WCD1/login
+data in sent in the body
+
+post data cannot be bookmark
+
+
+
+Core Java
+
+ LoginServelt
+    service(HttpRequest req, HttpResponse res){
+
+    }
+
+
+LoginServelt  ob = new LoginServelt();
+//object of HTTpRequest 
+//Object of HttpResponse
+ob.service(req, resp)
+
+Container  => Manage the lifecycle of servlet
+
+
+Lifecycle of Servlet
+-------------------------
+instantiation
+   either at the time of server start or when you make the first request
+   load-on-startup => +ve then object will create when server start
+   load-on-startup => -ve (default) then object will create at first request
+
+
+init()
+service()
+destroy()
+
+-----------------------------------------
+init-param vs context-param
+
+
+/one -> ServletOne -> doGet
+/two -> ServletTwo -> doGet
+
+
+filePassword= 12345678
+dbPassword = abcdefgh
+<init-param>
+    <param-name>filePassword</param-name>
+    <param-value>12345678</param-value>
+</init-param>
+
+
+<context-param>
+    <param-name>dbPassword</param-name>
+    <param-value>abcdefgh</param-value>
+</context-param>
+
+
+
+-----------------------------------------------------
+
+sticky notes
+
+request
+session
+context/application
+
+ServletA  
+context.setAttribute("a","apple"); 
+key-> string
+value  -> object  
+
+
+
+
+ServletB
+context.getAttribute("a"); -> apple
+
+
+----------------
+step to create servlet
+class extends HTTPServlet
+
+mapping in xml
+
+
+
+---------------------------------------------------------------
+Servlet COllabaratio
+1. RequestDispatcher
+      forward
+      include
+
+      request
+
+2. Send redirect
+      response
+
+
+ServletA
+
+
+
+
+ServletB
+
+
+login
+  username
+  password
+  submit ------------Request  /login----------->   server
+                                           validation
+                                           if valid user 
+                                               resposne => homepage
+                                                   display the list of friends
+                                                   texfield   submit(Add friends)
+                                            else
+                                               not valued username and password
+
+
+
+add Friend ---------/addFriend------>  server
+                                       username & friend
+
+web
+client ---> Servlet
+                -------Bussinees Logic(Service clas)--->  dao class ---->  db
+                                                     
+
+
+
+on click of Friend button
+   request -> GET:  /addFriend
+
+
+
+
+HTTP -> is stateless
+
+----------------------------
+
+different ways to manage session tracking
+1. hidden parameter
+2. cookie  ->
+3. session object
+
+
+req1 -> resp
+req2 -> resp
+
+req1
+Login -> username & pwd
+
+
+homepage hide(useranme=Jack)
+addFriend(req2) -> friendName
+
+
+token (ip,username,)
+
+
+
+
+
+
+
+
+
+
+
+
+request.getSession()
+   if there is no session object, then create the session object else give the existing object 
+
+
+request.getSession(true);
+   create the new session objectd
+
+request.getSession(false);
+   give the existing session
+
+
+----------------------------------
+JSP
+
+JSP: Java server page
+      Java in HTML
+
+Servlet => HTML in Java
+   out.println("<>");
+
+
+type of tag in JSP
+<% %> scriptlet
+<%! %> declaration
+<%= %> expression
+<%@  %> directive tag
+<%-- --%> jsp comment
+<!-- --> HTML comment
+
+JSP ->  servlet
+
+
+
+Servlet
+class MyServlet exteds HppServlet{
+    int x = 100;
+    public void init(){}
+    int a = 1000;
+    public void service(request, response){
+        int a = 10;
+        PrintWriter out = response.getWriter();
+        out.println("a ="+a);
+    }
+
+    public void destroy(){
+
+    }
+
+}
+
+
+scriplet
+---------
+<%
+ //all the code will be inside service method
+ int b = 10;
+ int b =10;
+ int a = 100;
+%>
+
+_____________________________________________________________________
+
+Expression
+----------
+<%= whatever you are writing inside expression => it will be in out.println() %>
+<%= 10> out.println(10);
+<%= 'a' %>  out.println('a');
+<%= b %>    out.println(b);
+<%= "hello world" %>  out.println("hello world";);
+<%= a==100; %>  out.println(a==100);
+
+_____________________________________________________________________
+
+
+declaration
+-------------
+<%! what ever you are write in this tag will be written inside the class   %>
+<%! int x = 100 ; %>
+_____________________________________________________________________
+<%@  %> Directive tag
+page
+   import
+   errorPage ="pagename.jsp"
+   isErrorPage="true"
+
+
+include 
+
+taglib
+
+
+
+_____________________________________________________________________
+
+difference b/w Html comment<!-- --> and jsp comment<%-- -->
+
+
+
+
+
+
+_____________________________________________________________________
+Lifecycle of JSP(a.jsp)
+---------------------   
+transalation  a_jsp.java
+compilation   a_jsp.class
+loading
+instantiation
+jspInit
+jspService
+jspDestroy
+
+
+implicit object
+------------------
+request         HttpServletRequest
+response        HttpServletResponse
+config          ServletConfig
+application     ServletContext
+out             JspWriter
+session         HttpSession
+pageContext     pageContext
+page            Object
+exception       Throwable
+
+
