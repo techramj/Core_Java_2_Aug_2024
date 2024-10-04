@@ -1,1 +1,41 @@
+Assignment 01:
+  1. create servlet which will return response 
+             Good Moring <Name>
 
+ Name should be passed as query parameter.
+ request: GET /greet?name=Sam
+ Good Morning Sam.
+
+Note: use web.xml for mapping
+
+Assignment 02:
+  Assignment 01 with annoation
+
+
+Assignment 03:
+   use context param to set the driver class name,  url, username and password.
+   create connection object and set to the context on the on click of login button.
+
+Assignment 4:
+
+UserLogin page: on successful login
+Welcome Name
+Enter loan amount:  textield
+submit
+
+
+if(amount < 5 lakh)
+   it should be apporoved by Manager
+
+else
+   It should be approved by Manager and SeniorManager
+
+
+
+ManagerServlet
+     Manager response: Amount approved 
+
+SeniorManagerServlet
+     SeniorManager response: Amount approved
+
+in everyPage except login page, there must be logout option
