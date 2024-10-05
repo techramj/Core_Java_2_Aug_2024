@@ -1,3 +1,4 @@
+
 <%@page import="java.util.List"%>
 <%@page import="com.seed.entity.User"%>
 <%@page import="com.seed.service.LoginService"%>
@@ -9,9 +10,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<%@ include file="assest/css/bootstrap_css.jsp"%>
 <title>Insert title here</title>
 </head>
 <body>
+    <jsp:include page="header.jsp"></jsp:include>
 
 	<%!LoginService service;%>
 
@@ -46,8 +49,9 @@
 		</ul>
 		
 
-			<form action="">
+			<form action="addFriend.jsp">
 				<input type="text" name="friend" >
+				<input type="hidden" name="username" value=<%=user.getUsername() %>> 
 				<button type="submit">Add Friend</button>
 			</form>
 		
@@ -56,6 +60,6 @@
 	    <p>Invalid username and Password </p>
 		<jsp:include page="login.jsp"></jsp:include>
 	<% } %>
-
+<%@ include file="footer.jsp" %>
 </body>
 </html>
