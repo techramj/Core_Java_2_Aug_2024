@@ -284,7 +284,7 @@ type of tag in JSP
 <% %> scriptlet
 <%! %> declaration
 <%= %> expression
-<%@  %> directive tag
+<%@  %> directive tag => page, inlcue, taglib
 <%-- --%> jsp comment
 <!-- --> HTML comment
 
@@ -385,3 +385,55 @@ page            Object
 exception       Throwable
 
 
+_____________________________________________________________________
+Type of scope in jsp
+-----------------
+page 
+request 
+session 
+application
+
+
+_____________________________________________________________________
+
+
+Expession Language
+
+_____________________________________________________________________
+difference between <%@ page include >  vs  <jsp:include>
+
+@page include will include the content before tranlastion(at complie time)
+jps:include wil include the content after jsp lifecycle(at run time)
+
+hearder = 10
+footer = 5
+
+page1           page2           page3
+100             50                 70
+
+
+header.jsp -->   header_jsp.class
+footer.jsp
+
+
+----------------------------------------------------------------
+Action Param:
+jsp:include , jsp:forward
+jsp:useBean
+jsp:setProperty
+jsp:getProperty
+
+
+Registration.jsp ->  page1.jsp  --- forwarding -> result1.jsp
+login of fecthing and seting into the session object  and request object=> page1.jsp
+we are using scriplet
+
+ideally, we need to avoid scriplet.
+
+we can avoid using action params
+
+<jsp:useBean id="u1" class="com.seed.entity.User" scope="session">
+</jsp:useBean>
+
+User u1 = new User();
+session.setAttribute("u1", u1);
