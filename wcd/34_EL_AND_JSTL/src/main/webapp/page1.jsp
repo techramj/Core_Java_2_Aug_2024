@@ -4,6 +4,7 @@
 <%@page import="com.seed.entity.Employee"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -69,6 +70,12 @@ Employee e = (Employee)request.getAttribute("employee");
    <li>${employee.projects[2] }</li>
    <li>${employee.projects[4] }</li>
  </ol>
+ 
+ <ul>
+ <c:forEach var="p" items="${employee.projects}">
+ 	<li>${p }</li>
+ </c:forEach>
+ </ul>
  
 
 

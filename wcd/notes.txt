@@ -395,9 +395,8 @@ application
 
 
 _____________________________________________________________________
+Expession Language:
 
-
-Expession Language
 
 _____________________________________________________________________
 difference between <%@ page include >  vs  <jsp:include>
@@ -437,3 +436,69 @@ we can avoid using action params
 
 User u1 = new User();
 session.setAttribute("u1", u1);
+
+
+_____________________________________________________________________
+Expression Language:
+
+it help to access the data from request, session, application, param, cookie.
+${expression}
+
+
+Implicit object
+---------------
+pageScope
+requestScope
+sessionScope
+applicationScope
+param
+paramValues
+header
+headerValues 
+cookie
+pageContext
+initParam
+
+
+
+
+Employee
+   Address => null
+      city
+
+Employee emp = new Employee();
+emp.getAddress().getCity();
+if(emp != null && emp.getAddress() != null && emp.getAddress().getCity()){
+    printt value of city
+}
+
+
+
+
+_____________________________________________________________________
+
+JSTL: Jsp standard tag library
+1. avoid scriplet
+2. modularity
+3. fast development
+4. easy to use 
+
+Type of tag 
+-----------
+Core tags : 
+XML tags 
+sql tags 
+function tags 
+
+Step to use jstl 
+----------------
+1. download the jar : http://www.java2s.com/Code/Jar/j/Downloadjstl12jar.htm
+2. copy the jar into lib folder
+3. use taglib directive for the jstl
+4. ready to use the tag
+
+
+2: jstl + mvc design pattern 
+2. xml introduction + small crud operation project 
+
+
